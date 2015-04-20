@@ -1,0 +1,49 @@
+<div class="row">
+<div class="col-md-6">
+
+<%= image_tag @product.image.url, class: "img-responsive" %>
+</div>  
+<div class="col-md-6">
+<h4><%= @product.name %></h4> 
+<p><strong>Brand / Designer: </strong></p>
+<p><%= @product.brand %></p> 
+<p><strong>Description:</strong></p>
+<p><%= @product.description %></p>
+
+<% if current_user %>
+
+<%= form_tag buy_path(slug: @product.slug) do %>
+<script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-amount="<%= @product.price %>"
+    data-name="Aisling Store"
+    data-description="<%= @product.name %>"
+    data-email="<%= current_user.email %>">
+  </script>
+<% end %>
+
+<% else %>
+
+<p>Please Login</p>
+<p>Purchase available for registered users only</p>
+
+<% end %>
+
+</div>
+</div>  
+
+
+
+<p>
+  <strong>Price: €</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @product.availability %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

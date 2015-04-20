@@ -1,0 +1,50 @@
+<!-- Full Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide" style="z-index: 888888;position: relative;">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+            	<img src="/assets/3.jpg" alt="onemoretest2">
+                <div class="carousel-caption">
+                    <h2>Hand Made Pottery &amp; Ceramics</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <img src="/assets/2.jpg" alt="onemoretest2">
+                <div class="carousel-caption">
+                    <h2>Lates Collection Irish Fasion Summer 2015</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <img src="/assets/1.jpg" alt="onemoretest2">
+                <div class="carousel-caption">
+                    <h2>Hand Made Jewellery</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+    <!-- Full Page Image Background Carousel Header the end-->
+<div class="jumbotron on_slider">
+<h1>Welcome to Aisling</h1>
+<p>Irish Craft &amp Design Store</p>
+<%= link_to "Lates Products", products_path, class: "btn btn-success btn-lg" %>
+<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-lg" %>	
+
+</div>

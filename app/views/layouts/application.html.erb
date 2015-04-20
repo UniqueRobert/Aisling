@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Store</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 3000
+    })
+  });
+</script>
+</head>
+<body>
+<div class="top_decoline"></div>	
+<%= render "layouts/header" %>
+<div class="container">
+<% flash.each do |type, message| %>
+<div class="alert alert-success fade-in">	
+<button class="close" data-dismiss="alert">x</button>
+<%= message %>	
+</div>
+<% end %>
+<%= yield %>
+</div>
+<div class="bottom_decoline"></div>
+</body>
+</html>
